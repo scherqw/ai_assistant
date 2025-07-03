@@ -1,0 +1,80 @@
+<context>
+# Overview  
+A personal Telegram chatbot AI assistant powered by LLMs to help automate daily operations. The bot will handle reminders, document summarization, daily logs, weekly progress summaries, and integrate with the Canvas API to track academic activities. The initial version is for personal use, focusing on core productivity and academic tracking features. The user wants to host and deploy the bot on Cloudflare, with step-by-step deployment and usage guides included for each major feature.
+
+# Core Features  
+- **Reminders**: Set up reminders via chat; bot will text at specified times.
+- **Document Summarization**: Send documents to the bot for concise summaries.
+- **Daily Logs & Weekly Summaries**: Log daily activities and receive weekly progress summaries.
+- **Canvas API Integration**: Extract enrolled courses, notify about upcoming assignments, submissions, tests, and grades.
+- **Command-based Interaction**: Use Telegram bot commands to trigger features.
+- **Cloudflare Deployment**: Host and deploy the bot on Cloudflare, with clear deployment instructions.
+
+# User Experience  
+- **User Persona**: Single user (yourself), a student or professional managing academic and daily tasks.
+- **Key Flows**:
+  - Send a message to set a reminder.
+  - Upload a document for summarization.
+  - Log daily activities via chat.
+  - Receive notifications about assignments, grades, and tests.
+  - Deploy and manage the bot via Cloudflare.
+- **UI/UX**: Simple Telegram chat interface, clear command structure, concise bot responses.
+
+</context>
+<PRD>
+# Technical Architecture  
+- **System Components**:
+  - Telegram Bot (Python/Node.js backend)
+  - LLM integration (OpenAI, local LLM, etc.)
+  - Canvas API client
+  - Data storage (initially text files, later upgradeable)
+  - Cloudflare deployment scripts/configuration
+- **Data Models**:
+  - User profile (Telegram ID, preferences)
+  - Reminders, logs, summaries
+  - Canvas course and assignment data
+- **APIs/Integrations**:
+  - Telegram Bot API
+  - Canvas LMS API
+  - LLM provider API
+  - Cloudflare Workers/Pages API
+- **Infrastructure**:
+  - Runs on Cloudflare (Workers/Pages), with deployment scripts and guides
+
+# Development Roadmap  
+- **MVP**:
+  - Telegram bot with commands: /remind, /summarize, /log, /weekly
+  - Basic LLM integration for summarization
+  - Store reminders/logs in text files
+  - Cloudflare deployment (step-by-step guide)
+- **Future Enhancements**:
+  - Canvas API integration for course/assignment tracking
+  - Automated notifications for assignments, grades, and tests
+  - Improved data storage (database)
+  - Multi-user support
+  - Advanced deployment options (CI/CD, secrets management)
+
+# Logical Dependency Chain
+- Set up Telegram bot and command handling (foundation)
+- Integrate LLM for summarization
+- Implement reminders and logging features
+- Add weekly summary generation
+- Integrate Canvas API (start with data extraction and notifications)
+- Add Cloudflare deployment scripts and documentation
+- Refactor storage as needed
+
+# Risks and Mitigations  
+- **Telegram/Canvas API changes**: Monitor for updates, use official libraries.
+- **LLM cost/latency**: Start with free/affordable options, optimize prompts.
+- **Data persistence**: Use text files for MVP, plan for database migration.
+- **Cloudflare limitations**: Ensure compatibility with Workers/Pages, monitor for API limits.
+- **Scope creep**: Focus on core features for MVP, document future ideas.
+
+# Appendix  
+- Canvas API docs: https://canvas.instructure.com/doc/api/
+- Telegram Bot API docs: https://core.telegram.org/bots/api
+- Cloudflare Workers docs: https://developers.cloudflare.com/workers/
+- Example LLM providers: OpenAI, HuggingFace, etc.
+- For each major feature and deployment step, provide a hands-on, step-by-step guide in the documentation and task breakdown.
+
+</PRD> 
