@@ -29,3 +29,6 @@ venv/
 # Task files
 # tasks.json
 # tasks/ 
+
+src/models.py
+src/storage.py

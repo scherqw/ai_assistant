@@ -9,7 +9,7 @@
         "testStrategy": "Verify project structure is created correctly, dependencies install without errors, and environment can be activated. Test basic imports of key libraries.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -17,7 +17,7 @@
             "description": "Set up the foundational directory structure for the project, organizing it into distinct folders for bot logic, utilities, storage, and deployment to ensure a modular and maintainable codebase.",
             "dependencies": [],
             "details": "Create the following directories at the root level:\n\n- `bot/`: Contains the core logic for the Telegram bot.\n- `utils/`: Houses utility functions and helper modules.\n- `storage/`: Manages data storage solutions, such as databases or file systems.\n- `deployment/`: Includes scripts and configurations for deploying the bot to various environments.\n\nThis structure promotes modularity and scalability, allowing for easier maintenance and future enhancements. For a comprehensive example of a well-structured Python Telegram bot, refer to the [telegram-bot-template repository](https://github.com/donBarbos/telegram-bot-template/blob/main/README.md).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that each directory is created correctly and is accessible by the development team. Ensure that the structure aligns with the project's scalability and maintainability requirements."
           },
           {
@@ -28,7 +28,7 @@
               1
             ],
             "details": "For Python:\n\n1. Create a virtual environment:\n\n   ```bash\n   python -m venv .venv\n   ```\n\n2. Activate the virtual environment:\n\n   - On Windows:\n\n     ```bash\n     .venv\\Scripts\\activate\n     ```\n\n   - On macOS/Linux:\n\n     ```bash\n     source .venv/bin/activate\n     ```\n\n3. Install the required packages:\n\n   ```bash\n   pip install python-telegram-bot requests\n   ```\n\nFor Node.js:\n\n1. Initialize a new Node.js project:\n\n   ```bash\n   npm init -y\n   ```\n\n2. Install the necessary packages:\n\n   ```bash\n   npm install node-telegram-bot-api requests\n   ```\n\nThis setup ensures that all dependencies are managed within the virtual environment, preventing conflicts and maintaining a clean development environment. For more details on setting up a Python Telegram bot, refer to the [python-telegram-bot documentation](https://docs.python-telegram-bot.org/en/v21.0.1/).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Confirm that the virtual environment is correctly set up and that all dependencies are installed without errors. Test the installation by running a simple script that imports the installed packages."
           },
           {
@@ -39,7 +39,7 @@
               2
             ],
             "details": "1. In the root directory, create a file named `.env.example`.\n\n2. Add the following content to the file:\n\n   ```env\n   TELEGRAM_BOT_TOKEN=your-telegram-bot-token\n   API_KEY=your-api-key\n   ```\n\n3. Ensure that the `.env.example` file is added to your `.gitignore` to prevent it from being tracked by version control.\n\n4. Developers should create their own `.env` file based on the `.env.example` template and populate it with their actual API keys.\n\nThis approach enhances security by keeping sensitive information out of the codebase and version control. For more information on managing environment variables in Node.js, refer to the [dotenv package documentation](https://www.npmjs.com/package/dotenv).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that the `.env.example` file is correctly formatted and excluded from version control. Ensure that the application can read the environment variables without issues."
           },
           {
@@ -50,7 +50,7 @@
               3
             ],
             "details": "1. In the root directory, create a `README.md` file.\n\n2. Include the following sections:\n\n   - **Project Title**: A brief, descriptive title for the project.\n   - **Description**: An overview of the project's purpose and functionality.\n   - **Installation Instructions**: Step-by-step guide on setting up the development environment, including virtual environment setup and dependency installation.\n   - **Usage**: Basic usage instructions or examples to get started with the bot.\n   - **Contributing**: Guidelines for contributing to the project, including coding standards and how to submit pull requests.\n\nThis documentation serves as a starting point for developers and helps maintain consistency in project setup and contribution. For an example of comprehensive project documentation, refer to the [telegram-bot-template repository](https://github.com/donBarbos/telegram-bot-template/blob/main/README.md).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Review the README file for clarity and completeness. Ensure that all setup instructions are accurate and that the document is free from errors."
           },
           {
@@ -61,7 +61,7 @@
               4
             ],
             "details": "1. In the `bot/` directory, create a file named `bot.py` (for Python) or `bot.js` (for Node.js).\n\n2. Implement a basic command handler:\n\n   - For Python:\n\n     ```python\n     from telegram import Update\n     from telegram.ext import Application, CommandHandler\n\n     async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:\n         await update.message.reply('Hello! I am your bot.')\n\n     application = Application.builder().token('YOUR_BOT_TOKEN').build()\n     application.add_handler(CommandHandler('start', start))\n     application.run_polling()\n     ```\n\n   - For Node.js:\n\n     ```javascript\n     const TelegramBot = require('node-telegram-bot-api');\n\n     const bot = new TelegramBot('YOUR_BOT_TOKEN', { polling: true });\n\n     bot.onText(//start/, (msg) => {\n       const chatId = msg.chat.id;\n       bot.sendMessage(chatId, 'Hello! I am your bot.');\n     });\n     ```\n\n3. Replace `'YOUR_BOT_TOKEN'` with the actual bot token obtained from BotFather.\n\n4. Run the script to start the bot and test its functionality by sending the `/start` command.\n\nThis step ensures that the bot is correctly set up and can respond to user inputs, confirming that the development environment is functioning as expected. For more details on creating a simple Telegram bot using Node.js, refer to [this guide](https://medium.com/@gabriel.dadamosrossetto/creating-a-simple-telegram-bot-using-node-js-a-step-by-step-guide-b476447955c6).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test the bot by sending the `/start` command and verifying that the bot responds with the expected message. Ensure that the bot is running without errors and is responsive to user inputs."
           }
         ]
@@ -76,7 +76,7 @@
         "dependencies": [
           1
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -84,7 +84,7 @@
             "description": "Initialize the Telegram bot using the python-telegram-bot library, ensuring proper authentication and configuration for communication with the Telegram servers.",
             "dependencies": [],
             "details": "Use the Application class from python-telegram-bot to create an Application instance with your bot's token. This instance will manage the bot's connection and updates. Refer to the python-telegram-bot documentation for detailed setup instructions. ([docs.python-telegram-bot.org](https://docs.python-telegram-bot.org/en/v21.5/telegram.ext.commandhandler.html?utm_source=openai))",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the bot's connection by sending a test message to a Telegram chat and confirming receipt."
           },
           {
@@ -95,7 +95,7 @@
               1
             ],
             "details": "For each command, define an asynchronous function that processes the command and its arguments. Use the CommandHandler class to associate each command with its corresponding function. Ensure that each handler is added to the bot's dispatcher to listen for the respective commands. ([docs.python-telegram-bot.org](https://docs.python-telegram-bot.org/en/v21.5/telegram.ext.commandhandler.html?utm_source=openai))",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test each command by sending the respective command in a chat and verifying the bot's response."
           },
           {
@@ -106,7 +106,7 @@
               2
             ],
             "details": "Decide between using polling or webhooks based on your hosting environment. For polling, use the start_polling() method; for webhooks, set up an HTTP server to receive updates. Ensure that the bot is running continuously to process incoming messages. ([docs.python-telegram-bot.org](https://docs.python-telegram-bot.org/en/v21.5/telegram.ext.commandhandler.html?utm_source=openai))",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Deploy the bot and interact with it in a Telegram chat to confirm it processes commands correctly."
           },
           {
@@ -117,7 +117,7 @@
               3
             ],
             "details": "Use Python's logging module to set up logging with appropriate levels (e.g., DEBUG, INFO, ERROR). Implement try-except blocks in your command handlers to catch exceptions and log error messages. Ensure that the bot continues to operate smoothly even when errors occur. ([docs.python-telegram-bot.org](https://docs.python-telegram-bot.org/en/v21.5/telegram.ext.commandhandler.html?utm_source=openai))",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Induce errors (e.g., by sending invalid commands) and verify that the bot logs the errors and responds appropriately."
           },
           {
@@ -128,7 +128,7 @@
               4
             ],
             "details": "Define functions that send welcome messages and usage instructions when the /start and /help commands are invoked. Use the CommandHandler class to associate these functions with their respective commands. Ensure that the help messages are clear and informative. ([docs.python-telegram-bot.org](https://docs.python-telegram-bot.org/en/v21.5/telegram.ext.commandhandler.html?utm_source=openai))",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Send /start and /help commands in a chat and verify that the bot responds with the correct help messages."
           }
         ]
@@ -143,7 +143,7 @@
         "dependencies": [
           1
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -151,7 +151,7 @@
             "description": "Create a 'storage/' directory to house separate JSON files for user data, reminders, logs, and summaries. Define data models for UserProfile, Reminder, and LogEntry to structure the data appropriately.",
             "dependencies": [],
             "details": "Implement the 'storage/' directory with subdirectories or files for each data type. Define the following data models:\n\n- UserProfile: { telegram_id (int), preferences (dict) }\n- Reminder: { id (int), message (str), datetime (str), user_id (int) }\n- LogEntry: { date (str), content (str), user_id (int) }\n\nUse Python's built-in 'json' module to handle JSON data serialization and deserialization.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the creation of the 'storage/' directory and the correct structure of each JSON file. Ensure that instances of UserProfile, Reminder, and LogEntry can be serialized to and deserialized from JSON format without errors."
           },
           {
@@ -162,7 +162,7 @@
               1
             ],
             "details": "In 'storage.py', implement the following functions:\n\n- save_reminder(reminder: Reminder): Save a Reminder instance to the reminders JSON file.\n- get_reminders(user_id: int): Retrieve all reminders for a specific user.\n- save_log(log: LogEntry): Save a LogEntry instance to the logs JSON file.\n- get_logs(user_id: int): Retrieve all logs for a specific user.\n- save_user_data(user: UserProfile): Save a UserProfile instance to the user data JSON file.\n- get_user_data(user_id: int): Retrieve a UserProfile instance for a specific user.\n\nUse Python's 'json' module for reading and writing JSON data. Ensure that each function handles file opening, data serialization, and closing appropriately.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test each function by adding sample data and verifying that the data is correctly saved to and retrieved from the corresponding JSON files. Ensure that data retrieval returns the correct data for the specified user."
           },
           {
@@ -173,7 +173,7 @@
               2
             ],
             "details": "Implement file locking using Python's 'fcntl' module or the 'filelock' package. For example, using 'filelock':\n\n```python\nfrom filelock import FileLock\n\nlock = FileLock('storage/lockfile.lock')\nwith lock:\n    # Perform file operations\n```\n\nThis ensures that only one process can access the file at a time, preventing data corruption. Refer to the 'File Locking in Python' article for more details. ([geeksforgeeks.org](https://www.geeksforgeeks.org/file-locking-in-python/?utm_source=openai))",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Simulate concurrent access by running multiple instances of the application that interact with the data files. Verify that only one instance can access the file at a time, and others wait until the lock is released, ensuring data integrity."
           },
           {
@@ -184,7 +184,7 @@
               3
             ],
             "details": "In 'storage.py', implement the following functions:\n\n- get_user_data(user_id: int): Retrieve a UserProfile instance for a specific user.\n- get_reminders(user_id: int): Retrieve all reminders for a specific user.\n- get_logs(user_id: int): Retrieve all logs for a specific user.\n\nUse Python's 'json' module to read data from JSON files. Ensure that each function handles file opening, data deserialization, and closing appropriately. Implement file locking as needed to prevent concurrent access issues.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test each function by adding sample data and verifying that the correct data is returned for the specified user. Ensure that data retrieval handles file locking correctly and returns the expected results."
           },
           {
@@ -195,7 +195,7 @@
               4
             ],
             "details": "In 'storage.py', implement functions to generate summaries such as:\n\n- generate_user_summary(user_id: int): Create a summary of a user's data, including total reminders, total logs, and other relevant metrics.\n- generate_system_summary(): Create a system-wide summary of all users' data, including total users, total reminders, total logs, etc.\n\nStore these summaries in a 'summaries.json' file within the 'storage/' directory. Use Python's 'json' module for reading and writing JSON data. Implement file locking as needed to prevent concurrent access issues.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test each function by adding sample data and verifying that the correct summaries are generated and stored in the 'summaries.json' file. Ensure that data retrieval handles file locking correctly and returns the expected results."
           }
         ]
@@ -796,11 +796,24 @@
             "testStrategy": "Unit tests for retry and circuit breaker logic, integration tests with mock failing services, chaos engineering tests to verify graceful degradation"
           }
         ]
+      },
+      {
+        "id": 13,
+        "title": "Migrate Data Storage System from Text Files to SQL Database",
+        "description": "Migrate the existing file-based storage system to a SQL database (SQLite or PostgreSQL) with comprehensive schema design, connection management, and data migration utilities.",
+        "details": "**Step 1: Database Selection and Setup**\nChoose between SQLite (for simplicity and serverless compatibility) or PostgreSQL (for production scalability). For Cloudflare Workers, consider D1 database or external PostgreSQL. Install required dependencies: sqlite3 (built-in Python) or psycopg2-binary for PostgreSQL.\n\n**Step 2: Schema Design**\nCreate database schema with tables:\n- users (id, telegram_id, preferences_json, created_at, updated_at)\n- reminders (id, user_id, message, scheduled_datetime, created_at, is_completed)\n- log_entries (id, user_id, content, entry_date, created_at, tags)\n- weekly_summaries (id, user_id, week_start_date, summary_content, created_at)\n\n**Step 3: Database Connection Management**\nImplement database.py with connection pooling, transaction management, and proper error handling. Create DatabaseManager class with methods: connect(), execute_query(), execute_transaction(), close_connection(). Handle connection timeouts and retries.\n\n**Step 4: CRUD Operations Implementation**\nReplace existing storage.py functions with SQL equivalents:\n- save_reminder() → INSERT INTO reminders\n- get_reminders() → SELECT FROM reminders WHERE user_id\n- save_log() → INSERT INTO log_entries\n- get_logs() → SELECT FROM log_entries with date filtering\n- save_user_data() → INSERT/UPDATE users table\nImplement proper parameterized queries to prevent SQL injection.\n\n**Step 5: Data Migration Script**\nCreate migrate_data.py script to:\n1. Read existing JSON/text files from storage/ directory\n2. Parse and validate data structure\n3. Transform data to match new schema\n4. Insert data into SQL tables with proper foreign key relationships\n5. Verify data integrity post-migration\n6. Create backup of original files before migration\n\n**Step 6: Configuration Management**\nAdd database configuration to environment variables: DATABASE_URL, DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD. Create database initialization script for first-time setup.\n\n**Note: If specific database choice, connection pooling library, or migration strategy details are unclear, these should be determined based on deployment environment requirements and expected user load.**",
+        "testStrategy": "**Unit Tests:**\n- Test database connection establishment and error handling\n- Verify all CRUD operations work correctly with sample data\n- Test SQL injection prevention with malicious input\n- Validate schema constraints and foreign key relationships\n\n**Integration Tests:**\n- Test data migration script with sample file-based data\n- Verify migrated data matches original data structure and content\n- Test bot functionality with new database backend\n- Validate concurrent access handling with multiple users\n\n**Performance Tests:**\n- Benchmark query performance with large datasets\n- Test connection pooling under load\n- Verify database performance vs. file-based system\n\n**Migration Validation:**\n- Compare data counts before and after migration\n- Verify data integrity with checksums or hash comparisons\n- Test rollback procedures if migration fails\n- Validate all existing bot commands work with new storage system",
+        "status": "pending",
+        "dependencies": [
+          3
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-07-03T01:31:35.404Z",
-      "updated": "2025-07-03T01:31:35.404Z",
+      "updated": "2025-07-07T04:19:24.207Z",
       "description": "Tasks for master context"
     }
   }
